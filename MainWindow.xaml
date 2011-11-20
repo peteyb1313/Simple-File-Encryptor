@@ -1,38 +1,39 @@
 ﻿<Window x:Class="FileEncryptor.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Simple File Encryptor" Height="389" Width="587" Background="#FFE8EFFF">
+        Title="Simple File Encryptor" Height="389" Width="689" Background="#FFE8EFFF">
     <Grid>
         
         <TabControl Name="tabControl1">
             <TabItem Header="Encrypt" Name="tabItem1">
                 <Grid Height="313" Background="#FFE5FFE5">
-                    <ListBox Margin="9,41,15,69" Name="listBoxFilesToEncrypt" />
-        <Button Content="Add Files..." Height="23" HorizontalAlignment="Left" Margin="9,0,0,40" Name="buttonAddFiles" VerticalAlignment="Bottom" Width="89" Click="buttonAddFiles_Click" />
+                    <ListBox Margin="9,41,15,66" Name="listBoxFilesToEncrypt" />
+        <Button Content="Add Files..." Height="23" HorizontalAlignment="Left" Margin="113,0,0,37" Name="buttonAddFiles" VerticalAlignment="Bottom" Width="89" Click="buttonAddFiles_Click" />
         <Label Content="Files To Encrypt:" Height="28" HorizontalAlignment="Left" Margin="9,7,0,0" Name="label1" VerticalAlignment="Top" Width="161" />
-        <Label Content="Password:" Height="28" HorizontalAlignment="Left" Margin="9,0,0,6" Name="label2" VerticalAlignment="Bottom" Width="68" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="83,0,0,9" Name="textBoxPassword" VerticalAlignment="Bottom" Width="181" />
-                    <Button Content="Encrypt Files" Height="23" HorizontalAlignment="Right" Margin="0,0,15,11" Name="buttonEncrypt" VerticalAlignment="Bottom" Width="110" Click="buttonEncrypt_Click" IsEnabled="False" />
-        <CheckBox Content="Select Output Directory" Height="16" HorizontalAlignment="Right" Margin="0,0,150,47" Name="checkBoxSelectOutputDir" VerticalAlignment="Bottom" />
-        <CheckBox Content="Delete After Encrypt" Height="16" HorizontalAlignment="Right" Margin="0,0,16,47" Name="checkBoxDeleteAfter" VerticalAlignment="Bottom" />
-        <Button Content="Remove Selected" Height="23" HorizontalAlignment="Left" Margin="104,0,0,40" Name="buttonRemove" VerticalAlignment="Bottom" Width="111" Click="buttonRemove_Click" />
-                    
+        <Label Content="Password:" Height="28" HorizontalAlignment="Left" Margin="9,0,0,3" Name="label2" VerticalAlignment="Bottom" Width="68" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="83,0,0,6" Name="textBoxPassword" VerticalAlignment="Bottom" Width="181" />
+                    <Button Content="Encrypt Files" Height="23" HorizontalAlignment="Right" Margin="0,0,15,8" Name="buttonEncrypt" VerticalAlignment="Bottom" Width="110" Click="buttonEncrypt_Click" IsEnabled="False" />
+        <CheckBox Content="Select Output Directory" Height="16" HorizontalAlignment="Right" Margin="0,0,150,44" Name="checkBoxSelectOutputDir" VerticalAlignment="Bottom" />
+        <CheckBox Content="Delete After Encrypt" Height="16" HorizontalAlignment="Right" Margin="0,0,16,44" Name="checkBoxDeleteAfter" VerticalAlignment="Bottom" />
+        <Button Content="Remove Selected" Height="23" HorizontalAlignment="Left" Margin="208,0,0,37" Name="buttonRemove" VerticalAlignment="Bottom" Width="111" Click="buttonRemove_Click" />
+                    <Button Content="Add Folder..." Height="23" HorizontalAlignment="Left" Margin="9,0,0,37" Name="buttonAddFolder" VerticalAlignment="Bottom" Width="98" Click="buttonAddFolder_Click" />
                 </Grid>
             </TabItem>
             <TabItem Header="Decrypt" Name="tabItem2">
                 <Grid Height="323" Background="#FFFFF5F5">
                     <ListBox Margin="9,41,15,73" Name="listBoxFilesToDecrypt" />
-                    <Button Content="Add Files..." Height="23" HorizontalAlignment="Left" Margin="9,0,0,44" Name="buttonAddFilesDecrypt" VerticalAlignment="Bottom" Width="89" Click="buttonAddFilesDecrypt_Click" />
+                    <Button Content="Add Files..." Height="23" HorizontalAlignment="Left" Margin="113,0,0,44" Name="buttonAddFilesDecrypt" VerticalAlignment="Bottom" Width="89" Click="buttonAddFilesDecrypt_Click" />
                     <Label Content="Files To Decrypt:" Height="28" HorizontalAlignment="Left" Margin="9,7,0,0" Name="labelDecrypt" VerticalAlignment="Top" Width="161" />
                     <Label Content="Password:" Height="28" HorizontalAlignment="Left" Margin="9,0,0,10" Name="labelPassword" VerticalAlignment="Bottom" Width="68" />
                     <TextBox Height="23" HorizontalAlignment="Left" Margin="83,0,0,13" Name="textBoxPasswordDecrypt" VerticalAlignment="Bottom" Width="146" />
                               
-                    <Button Content="Decrypt Files" Height="23" HorizontalAlignment="Right" Margin="0,0,15,11" Name="buttonDecrypt" VerticalAlignment="Bottom" Width="110" Click="buttonDecrypt_Click" IsEnabled="False" />
+                    <Button Content="Decrypt Files" Height="23" HorizontalAlignment="Right" Margin="0,0,15,15" Name="buttonDecrypt" VerticalAlignment="Bottom" Width="110" Click="buttonDecrypt_Click" IsEnabled="False" />
                     
                     <CheckBox Content="Delete After Decrypt" Height="16" Margin="0,0,15,51" Name="checkBoxDeleteAfterDecrypt" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="125" />
-                    <Button Content="Remove Selected" Height="23" HorizontalAlignment="Left" Margin="104,0,0,44" Name="buttonRemoveDecrypt" VerticalAlignment="Bottom" Width="111" Click="buttonRemoveDecrypt_Click" />
-                    <CheckBox Content="Select Output Directory" Height="16" HorizontalAlignment="Right" Margin="0,0,146,51" Name="checkBoxSelectOutputDirDecrypt" VerticalAlignment="Bottom" />
-                    <CheckBox Content="Run After Decrypt" Height="16" HorizontalAlignment="Right" Margin="0,0,176,22" Name="checkBoxRunAfterDecrypt" VerticalAlignment="Bottom" Width="111" />
+                    <Button Content="Remove Selected" Height="23" HorizontalAlignment="Left" Margin="208,0,0,44" Name="buttonRemoveDecrypt" VerticalAlignment="Bottom" Width="111" Click="buttonRemoveDecrypt_Click" />
+                    <CheckBox Content="Select Output Directory" Height="16" HorizontalAlignment="Right" Margin="0,0,150,51" Name="checkBoxSelectOutputDirDecrypt" VerticalAlignment="Bottom" />
+                    <CheckBox Content="Run After Decrypt" Height="16" HorizontalAlignment="Right" Margin="0,0,181,22" Name="checkBoxRunAfterDecrypt" VerticalAlignment="Bottom" Width="111" />
+                    <Button Content="Add Folder..." Height="23" HorizontalAlignment="Left" Margin="9,0,0,44" Name="buttonAddFolderDecrypt" VerticalAlignment="Bottom" Width="98" Click="buttonAddFolderDecrypt_Click" />
                 </Grid>
             </TabItem>
         </TabControl>

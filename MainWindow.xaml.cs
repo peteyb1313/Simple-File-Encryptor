@@ -99,8 +99,12 @@ namespace FileEncryptor
 
         private void buttonRemove_Click(object sender, RoutedEventArgs e)
         {
-            if(listBoxFilesToEncrypt.SelectedIndex != -1)
+            if (listBoxFilesToEncrypt.SelectedIndex != -1)
+            {
                 listBoxFilesToEncrypt.Items.RemoveAt(listBoxFilesToEncrypt.SelectedIndex);
+                if (listBoxFilesToEncrypt.Items.Count == 0)
+                    buttonEncrypt.IsEnabled = false;
+            }
         }
 
         private void buttonEncrypt_Click(object sender, RoutedEventArgs e)
@@ -532,7 +536,11 @@ namespace FileEncryptor
         private void buttonRemoveDecrypt_Click(object sender, RoutedEventArgs e)
         {
             if (listBoxFilesToDecrypt.SelectedIndex != -1)
+            {
                 listBoxFilesToDecrypt.Items.RemoveAt(listBoxFilesToDecrypt.SelectedIndex);
+                if (listBoxFilesToDecrypt.Items.Count == 0)
+                    buttonDecrypt.IsEnabled = false;
+            }
         }
 
         private string[] browseFilesDecrypt()
@@ -545,6 +553,29 @@ namespace FileEncryptor
             fileDialogue.ShowDialog();
 
             return fileDialogue.FileNames;
+        }
+
+        private void buttonAddFolder_Click(object sender, RoutedEventArgs e)
+        {
+            String inFolder = getFolder();
+
+            if (inFolder.EndsWith("\\") == false)
+                inFolder = inFolder +"\\";
+
+            listBoxFilesToEncrypt.Items.Add(inFolder);
+            buttonEncrypt.IsEnabled = true;
+
+        }
+
+        private void buttonAddFolderDecrypt_Click(object sender, RoutedEventArgs e)
+        {
+            String inFolder = getFolder();
+
+            if (inFolder.EndsWith("\\") == false)
+                inFolder = inFolder + "\\";
+
+            listBoxFilesToDecrypt.Items.Add(inFolder);
+            buttonDecrypt.IsEnabled = true;
         }
     }
 }
